@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>NSBLPA - Contact</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+  <header>
+    <div class="header-logo">NSBLPA</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="ownership.html">Ownership</a>
+      <a href="teams.html">Teams</a>
+      <a href="apps.html">Apps</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main class="main">
+    <h1>Contact Us</h1>
+    <form method="post" action="#" id="contactForm" autocomplete="off">
+      <label for="name">Name</label>
+      <input name="name" id="name" required>
+      <label for="email">Email</label>
+      <input name="email" id="email" type="email" required>
+      <label for="message">Message</label>
+      <textarea name="message" id="message" required></textarea>
+      <button type="submit" class="btn-main">Send Message</button>
+    </form>
+    <div id="contactNotice" class="notice" style="display:none"></div>
+  </main>
+  <script src="assets/scripts.js"></script>
+  <script>
+    document.getElementById('contactForm').onsubmit = function(e) {
+      e.preventDefault();
+      document.getElementById('contactNotice').style.display = 'block';
+      document.getElementById('contactNotice').className = 'notice success';
+      document.getElementById('contactNotice').textContent = 'Thanks - your message was received (demo, not sent).';
+      this.reset();
+    }
+  </script>
+</body>
+</html>
